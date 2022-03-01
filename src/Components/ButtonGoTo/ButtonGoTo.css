@@ -1,0 +1,22 @@
+.designButtonGoTo {
+    height: 5em;
+    width: 10em;
+
+    background-color: rgb(8, 231, 8);
+    transition: 0.4s;
+    border-radius:1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.designButtonGoTo:hover {
+    background-color: brown;
+    transition: 0.4s;
+    transform:scale(.9);
+    
+    
+}

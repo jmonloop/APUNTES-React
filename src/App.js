@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+//Importo métodos de react-router-dom para navegar entre los diferentes Routes
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//Importo los diferentes Containers o páginas que cambian
+import Home from './Containers/Home/Home';
+import Login from './Containers/Login/Login';
+import Register from './Containers/Register/Register';
+
+//Importo componentes (en App.js funcionan como las partes de la app que no cambian)
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+
+//App() es el núcleo de todo
 function App() {
   return (
+    //Aqui funcionará el enrutado de la aplicación.
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/* Dentro de BrowserRouter, fuera de Routes, metemos componentes estáticos */}
+      <BrowserRouter>
+
+        {/* Como el header */}
+        <Header/>
+        
+        {/* Dentro de routes metemos las páginas que cambian */}
+        <Routes>
+          {/* Se les llama usando los paths de react-router-dom */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+         
+        </Routes>
+        
+        <Footer/>
+
+      </BrowserRouter>
+        
+      
+
     </div>
   );
 }
